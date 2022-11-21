@@ -1,0 +1,32 @@
+{
+    "name": "ip-detector",
+    "version": "1.0.0",
+    "description": "Detect ip location",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jordy-k/ip-detector.git"
+    },
+    "author": "Jordy",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jordy-k/ip-detector/issues"
+    },
+    "homepage": "https://github.com/jordy-k/ip-detector#readme",
+    "dependencies": {
+        "body-parser": "^1.20.1",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "express-session": "^1.17.3",
+        "knex": "^2.3.0",
+        "mysql": "^2.18.1",
+        "nodemon": "^2.0.20",
+        "process": "^0.11.10"
+    }
+}
