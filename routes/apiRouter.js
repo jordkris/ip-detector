@@ -11,7 +11,7 @@ const auth = require("../controller/api/getIpController.js");
 const db = require("../controller/api/dbApiController.js");
 
 // implementation
-router.post("/getIp", auth.getIp);
+router.get("/getIp", auth.getIp);
 router.post("/db/get", db.get);
 router.post("/db/update", db.update);
 module.exports = router;
