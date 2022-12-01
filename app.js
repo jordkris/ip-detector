@@ -12,6 +12,7 @@ let con = require("./config/database.js");
 // connect route to database
 app.use((req, res, next) => {
     req.con = con;
+    res.setHeader('Access-Control-Allow-Origin', '*');
     return next();
 });
 
