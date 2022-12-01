@@ -1,6 +1,4 @@
 const dbModel = require("../../model/dbModel");
-const process = require('process');
-const moment = require('moment');
 var request = require('request');
 
 module.exports = {
@@ -22,7 +20,6 @@ module.exports = {
                 });
             })).results[0].formatted;
         };
-        // console.log(moment().format(("YYYYMMDDHHmmssSSSSSS")));
         // res.json({ myIP: req.socket.remoteAddress });
         res.header('Content-Type', 'application/json');
         let dataIP = await new Promise((resolve, reject) => {
@@ -54,6 +51,7 @@ module.exports = {
                 address: address,
                 accurate_latlong: accurate_lat + ',' + accurate_lon,
                 accurate_address: accurate_address,
+                date_created: new Date() // moment().format(("YYYY-MM-DDTHH:mm:ss"))
             },
             server: true
         }, (results) => {
