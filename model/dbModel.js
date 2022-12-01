@@ -1,4 +1,15 @@
 module.exports = {
+    add: (con, res, opts, callback) => {
+        con(opts.table).insert(opts.data).then(callback).catch((err) => {
+            console.error(`Error insert data in table ${opts.table}: ${err.message}`);
+            if (opts.server) {
+                res.status(500).json({
+                    status: 'error',
+                    message: err.message
+                });
+            }
+        });
+    },
     get: (con, res, opts, callback) => {
         let errorCallback = (err) => {
             console.error(`Failed get data from table ${opts.table}: ${err.message}`);
