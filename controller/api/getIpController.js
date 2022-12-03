@@ -36,7 +36,7 @@ module.exports = {
                 }
             });
         });
-        let ip = await dataIP.ip;
+        let ip = req.socket.remoteAddress;
         let lat = await dataIP.loc.split(',')[0];
         let lon = await dataIP.loc.split(',')[1];
         let address = await getAddress(lat, lon);
