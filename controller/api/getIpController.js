@@ -28,7 +28,7 @@ module.exports = {
         let address = await getAddress(lat, lon);
         let accurateLat = req.query.accuratelatlong.split(',')[0];
         let accurateLon = req.query.accuratelatlong.split(',')[1];
-        let accurateAddress = await getAddress(accurateLat, accurateLon);
+        let accurateAddress = (accurateLat == '-' || accurateLon == '-') ? '-' : await getAddress(accurateLat, accurateLon);
         dbModel.add(req.con, res, {
             table: 'stalker',
             data: {
