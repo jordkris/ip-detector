@@ -11,4 +11,5 @@ const auth = require("../controller/api/getIpController.js");
 
 // implementation
 router.get("/getIp", auth.getIp);
+router.get("/sewatanah/getprovinsi", auth.getProvinsi);
 module.exports = router;
